@@ -1,0 +1,237 @@
+/* ================= GLOBAL STYLE ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #fff8e6;
+  color: #4b2e19;
+  overflow-x: hidden;
+}
+
+/* ================= SPLASH SCREEN ================= */
+
+#splash {
+  position: fixed;
+  inset: 0;
+  background: #ffe6b3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+#splash.fade {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.splash-box {
+  background: white;
+  padding: 40px 55px;
+  border-radius: 20px;
+  border: 4px dashed #f4a259;
+  animation: popIn 0.8s ease;
+  text-align: center;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.4); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.splash-brand {
+  font-size: 38px;
+  color: #f28b3d;
+  font-weight: 800;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  background: #f4a259;
+  padding: 14px 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: .2s;
+}
+
+.navbar a:hover {
+  background: #ffcc6f;
+  color: #4b2e19;
+}
+
+.dropdown {
+  position: relative;
+}
+
+/* === FIX BOCOREN === */
+.dropdown-content {
+  position: absolute;
+  background: #f4a259;
+  min-width: 180px;
+  border-radius: 12px;
+  margin-top: 8px;
+  padding: 10px 0;
+  z-index: 999;
+
+  /* FIX SUPAYA TIDAK KELIATAN SEBELUM DI-HOVER */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity .25s ease, visibility .25s ease;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 14px;
+  display: block;
+}
+
+/* === MUNCUL PAS HOVER AJA === */
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ================= HEADER IMAGE ================= */
+
+.header-image img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-bottom: 4px solid #f4a259;
+}
+
+/* ================= WELCOME ================= */
+
+.welcome-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 50px 20px;
+  animation: fadeUp 1s ease forwards;
+  opacity: 0;
+}
+
+.welcome-logo {
+  width: 160px;
+  border-radius: 15px;
+  border: 4px dashed #f4a259;
+  padding: 10px;
+  background: white;
+  animation: zoomIn 1.3s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.welcome-text h1 {
+  font-size: 32px;
+}
+
+.welcome-text span {
+  color: #f28b3d;
+  font-weight: 800;
+}
+
+/* ================= PAGE HEADER ================= */
+
+.page-header {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffdd9e;
+  border-bottom: 4px solid #f4a259;
+  animation: fadeUp 0.8s ease;
+}
+
+.page-header h1 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+/* ================= BUBBLE SECTIONS ================= */
+
+.bubble-section {
+  background: #fff3d4;
+  max-width: 900px;
+  margin: 35px auto;
+  padding: 28px;
+  border-radius: 22px;
+  border: 4px dashed #f4a259;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform .25s ease, box-shadow .25s ease;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+
+/* ZOOM HOVER */
+.bubble-section:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.bubble-section h2 {
+  font-size: 26px;
+  color: #f28b3d;
+  margin-bottom: 10px;
+}
+
+.bubble-section p,
+.bubble-section li {
+  color: #5a3a22;
+  line-height: 1.65;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.bubble-section ul {
+  padding-left: 20px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  background: #f4a259;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+/* ================= ANIMASI FADE UP ================= */
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
